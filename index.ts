@@ -81,9 +81,11 @@ router.get('/ask/stream', async (ctx) => {
 
 app.use(router.routes());
 
+const { PORT = 3000 } = process.env
+
 (async () => {
-    const server = app.listen(6900, () => {
-        console.log("Now listening: http://127.0.0.1:6900");
+    const server = app.listen(PORT, () => {
+        console.log(`Now listening: http://127.0.0.1:${PORT}`);
     });
     process.on('SIGINT', () => {
         server.close(() => {

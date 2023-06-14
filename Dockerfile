@@ -6,12 +6,13 @@ WORKDIR /usr/src/app
 
 COPY --chown=pptruser package.json /usr/src/app/
 
-RUN npm i --registry=https://registry.npm.taobao.org
+RUN npm i
+# RUN npm i --registry=https://registry.npm.taobao.org
 
 COPY --chown=pptruser . /usr/src/app
 
 VOLUME [ "/usr/src/app/run" ]
 
-EXPOSE 3000
+EXPOSE 300
 
 CMD npm start
