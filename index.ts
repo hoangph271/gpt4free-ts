@@ -81,7 +81,7 @@ router.get('/ask/stream', async (ctx) => {
 
 app.use(router.routes());
 
-const PORT = 3000
+const { PORT = 3000 } = process.env;
 
 (async () => {
     const server = app.listen(PORT, () => {
